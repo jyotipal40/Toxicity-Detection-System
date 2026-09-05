@@ -114,7 +114,200 @@
         </section>
 
 
-        <!-- More sections will be added here -->
+        <!-- ================= ABOUT ================= -->
+
+        <section class="section about-section" id="about">
+
+            <div class="section-container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">01 — THE PROJECT</span>
+
+                    <h2>
+                        Understanding
+                        <span>Toxicity</span>
+                    </h2>
+
+                    <p>
+                        Online platforms generate enormous amounts of user-generated
+                        content every day. Identifying toxic comments manually is
+                        difficult, time-consuming, and difficult to scale.
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-main-card">
+
+                        <div class="card-icon">01</div>
+
+                        <h3>What are we solving?</h3>
+
+                        <p>
+                            This project develops a machine learning based system
+                            for classifying comments as <strong>TOXIC</strong> or
+                            <strong>NON-TOXIC</strong>.
+                        </p>
+
+                        <p>
+                            The system uses Natural Language Processing to transform
+                            raw text into numerical features and then applies
+                            multiple machine learning algorithms to identify the
+                            model that performs best on the toxicity classification
+                            task.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-side-card">
+
+                        <div class="card-icon small">◎</div>
+
+                        <h3>Binary Classification</h3>
+
+                        <p>
+                            A comment is considered toxic when at least one of the
+                            toxicity-related labels in the dataset is present.
+                        </p>
+
+                        <div class="label-pills">
+                            <span class="toxic-pill">TOXIC</span>
+                            <span class="safe-pill">NON-TOXIC</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-side-card">
+
+                        <div class="card-icon small">✦</div>
+
+                        <h3>Primary Objective</h3>
+
+                        <p>
+                            Compare different machine learning approaches and
+                            select the most suitable model using evaluation metrics
+                            that account for the imbalanced nature of the dataset.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DATASET ================= -->
+
+        <section class="section dataset-section" id="dataset">
+
+            <div class="section-container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-label">02 — DATASET</span>
+
+                    <h2>
+                        The <span>Jigsaw</span> Dataset
+                    </h2>
+
+                    <p>
+                        The project uses the Jigsaw Toxic Comment Classification
+                        dataset containing Wikipedia comments annotated for
+                        different forms of toxicity.
+                    </p>
+
+                </div>
+
+
+                <div class="dataset-grid">
+
+                    <div class="dataset-card large">
+
+                        <span class="dataset-number">01</span>
+
+                        <h3>Six Toxicity Labels</h3>
+
+                        <p>
+                            The original dataset contains six toxicity-related
+                            categories.
+                        </p>
+
+                        <div class="label-grid">
+
+                            <div>TOXIC</div>
+                            <div>SEVERE TOXIC</div>
+                            <div>OBSCENE</div>
+                            <div>THREAT</div>
+                            <div>INSULT</div>
+                            <div>IDENTITY HATE</div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dataset-card">
+
+                        <span class="dataset-number">02</span>
+
+                        <h3>Binary Target</h3>
+
+                        <div class="target-visual">
+
+                            <div class="target-box safe">
+                                <strong>0</strong>
+                                <span>NON-TOXIC</span>
+                            </div>
+
+                            <div class="target-arrow">→</div>
+
+                            <div class="target-box toxic">
+                                <strong>1</strong>
+                                <span>TOXIC</span>
+                            </div>
+
+                        </div>
+
+                        <p>
+                            The six original labels are combined into one binary
+                            target. If any toxicity label is present, the target
+                            becomes 1.
+                        </p>
+
+                    </div>
+
+
+                    <div class="dataset-card">
+
+                        <span class="dataset-number">03</span>
+
+                        <h3>Train / Test Split</h3>
+
+                        <div class="split-bar">
+                            <div class="train-part">80% TRAIN</div>
+                            <div class="test-part">20% TEST</div>
+                        </div>
+
+                        <p>
+                            The dataset is split using stratification so that the
+                            class distribution is preserved between training and
+                            testing data.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
