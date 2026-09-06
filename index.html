@@ -454,6 +454,252 @@
         </div>
 
     </section>
+    <!-- ==================== RESULTS SECTION ==================== -->
+    <section class="results-section" id="results">
+
+        <div class="section-heading">
+            <span class="section-tag">MODEL EVALUATION</span>
+            <h2>Comparing the Models</h2>
+            <p>
+                Four machine learning classifiers were evaluated using
+                accuracy, precision, recall and F1 score.
+            </p>
+        </div>
+
+
+        <!-- Model Cards -->
+        <div class="model-results-grid">
+
+            <!-- Naive Bayes -->
+            <div class="model-card">
+                <div class="model-card-top">
+                    <span class="model-index">01</span>
+                    <span class="model-name">Naive Bayes</span>
+                </div>
+
+                <div class="model-metrics">
+                    <div>
+                        <span>Accuracy</span>
+                        <strong>94.91%</strong>
+                    </div>
+
+                    <div>
+                        <span>Precision</span>
+                        <strong>91.67%</strong>
+                    </div>
+
+                    <div>
+                        <span>Recall</span>
+                        <strong>54.95%</strong>
+                    </div>
+
+                    <div class="f1-metric">
+                        <span>F1 Score</span>
+                        <strong>68.71%</strong>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Logistic Regression -->
+            <div class="model-card selected-model">
+
+                <div class="selected-badge">SELECTED MODEL</div>
+
+                <div class="model-card-top">
+                    <span class="model-index">02</span>
+                    <span class="model-name">Logistic Regression</span>
+                </div>
+
+                <div class="model-metrics">
+                    <div>
+                        <span>Accuracy</span>
+                        <strong>93.01%</strong>
+                    </div>
+
+                    <div>
+                        <span>Precision</span>
+                        <strong>61.05%</strong>
+                    </div>
+
+                    <div>
+                        <span>Recall</span>
+                        <strong>86.23%</strong>
+                    </div>
+
+                    <div class="f1-metric">
+                        <span>F1 Score</span>
+                        <strong>71.49%</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Linear SVM -->
+            <div class="model-card">
+
+                <div class="model-card-top">
+                    <span class="model-index">03</span>
+                    <span class="model-name">Linear SVM</span>
+                </div>
+
+                <div class="model-metrics">
+                    <div>
+                        <span>Accuracy</span>
+                        <strong>92.66%</strong>
+                    </div>
+
+                    <div>
+                        <span>Precision</span>
+                        <strong>59.95%</strong>
+                    </div>
+
+                    <div>
+                        <span>Recall</span>
+                        <strong>83.85%</strong>
+                    </div>
+
+                    <div class="f1-metric">
+                        <span>F1 Score</span>
+                        <strong>69.91%</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Random Forest -->
+            <div class="model-card">
+
+                <div class="model-card-top">
+                    <span class="model-index">04</span>
+                    <span class="model-name">Random Forest</span>
+                </div>
+
+                <div class="model-metrics">
+                    <div>
+                        <span>Accuracy</span>
+                        <strong>94.60%</strong>
+                    </div>
+
+                    <div>
+                        <span>Precision</span>
+                        <strong>81.16%</strong>
+                    </div>
+
+                    <div>
+                        <span>Recall</span>
+                        <strong>61.08%</strong>
+                    </div>
+
+                    <div class="f1-metric">
+                        <span>F1 Score</span>
+                        <strong>69.70%</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Why Logistic Regression -->
+        <div class="selection-box">
+
+            <div class="selection-content">
+
+                <span class="detail-label">FINAL MODEL</span>
+
+                <h3>Why Logistic Regression?</h3>
+
+                <p>
+                    Model selection was based on F1 score rather than accuracy
+                    because the dataset contains an imbalanced distribution
+                    between toxic and non-toxic comments.
+                </p>
+
+                <p>
+                    Logistic Regression achieved the highest F1 score of
+                    <strong>71.49%</strong> and a toxic-class recall of
+                    <strong>86.23%</strong>, making it the selected model
+                    for the final system.
+                </p>
+
+            </div>
+
+            <div class="selection-score">
+
+                <span>Best F1 Score</span>
+
+                <strong>71.49%</strong>
+
+                <small>Logistic Regression</small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Confusion Matrix -->
+        <div class="confusion-wrapper">
+
+            <div class="confusion-heading">
+    
+                <span class="detail-label">FINAL MODEL RESULTS</span>
+
+                <h3>Confusion Matrix</h3>
+
+                <p>
+                    Performance of the selected Logistic Regression model
+                    on the test set.
+                </p>
+
+            </div>
+
+
+            <div class="confusion-matrix">
+
+                <div class="matrix-corner"></div>
+
+                <div class="matrix-label">Predicted<br>Non-Toxic</div>
+                <div class="matrix-label">Predicted<br>Toxic</div>
+
+
+                <div class="matrix-label side-label">
+                    Actual<br>Non-Toxic
+                </div>
+
+                <div class="matrix-cell correct">
+                    <strong>26,885</strong>
+                    <span>True Negative</span>
+                </div>
+
+                <div class="matrix-cell incorrect">
+                    <strong>1,785</strong>
+                    <span>False Positive</span>
+                </div>
+
+
+                <div class="matrix-label side-label">
+                    Actual<br>Toxic
+                </div>
+
+                <div class="matrix-cell incorrect">
+                    <strong>447</strong>
+                    <span>False Negative</span>
+                </div>
+
+                <div class="matrix-cell correct">
+                    <strong>2,798</strong>
+                    <span>True Positive</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
     </main>
 
 
