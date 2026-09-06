@@ -700,6 +700,160 @@
         </div>
 
     </section>
+    <!-- ==================== DEMONSTRATION SECTION ==================== -->
+    <section class="demo-section" id="demonstration">
+
+        <div class="section-heading">
+            <span class="section-tag">PREDICTION DEMO</span>
+            <h2>From Comment to Classification</h2>
+            <p>
+                The trained model takes a cleaned text comment and classifies
+                it as either toxic or non-toxic.
+            </p>
+        </div>
+
+
+        <div class="demo-grid">
+
+            <!-- Toxic Example -->
+            <div class="prediction-card toxic-card">
+
+                <div class="prediction-header">
+                    <span class="prediction-status toxic-status">
+                        TOXIC
+                    </span>
+
+                    <span class="prediction-label">
+                        Example 01
+                    </span>
+                </div>
+
+                <div class="comment-box">
+                    <span class="quote-mark">“</span>
+                    <p>
+                        This is a horrible and hateful comment
+                    </p>
+                </div>
+
+                <div class="prediction-footer">
+                    <span>Model Output</span>
+                    <strong>TOXIC</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Non-Toxic Example -->
+            <div class="prediction-card safe-card">
+
+                <div class="prediction-header">
+                    <span class="prediction-status safe-status">
+                        NON-TOXIC
+                    </span>
+
+                    <span class="prediction-label">
+                        Example 02
+                    </span>
+                </div>
+
+                <div class="comment-box">
+                    <span class="quote-mark">“</span>
+                    <p>
+                        Thank you for your help
+                    </p>
+                </div>
+
+                <div class="prediction-footer">
+                    <span>Model Output</span>
+                    <strong>NON-TOXIC</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Non-Toxic Example -->
+            <div class="prediction-card safe-card">
+
+                <div class="prediction-header">
+                    <span class="prediction-status safe-status">
+                        NON-TOXIC
+                    </span>
+
+                    <span class="prediction-label">
+                        Example 03
+                    </span>
+                </div>
+
+                <div class="comment-box">
+                    <span class="quote-mark">“</span>
+                    <p>
+                        I am happy with my life
+                    </p>
+                </div>
+
+                <div class="prediction-footer">
+                    <span>Model Output</span>
+                    <strong>NON-TOXIC</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Prediction Process -->
+        <div class="prediction-process">
+
+            <div class="prediction-process-title">
+                <span class="detail-label">INFERENCE FLOW</span>
+                <h3>How a New Comment Is Classified</h3>
+            </div>
+
+            <div class="mini-flow">
+
+                <div class="mini-flow-item">
+                    <span>01</span>
+                    <strong>Input</strong>
+                    <small>Raw comment</small>
+                </div>
+
+                <div class="mini-arrow">→</div>
+
+                <div class="mini-flow-item">
+                    <span>02</span>
+                    <strong>Clean</strong>
+                    <small>Preprocessed text</small>
+                </div>
+
+                <div class="mini-arrow">→</div>
+
+                <div class="mini-flow-item">
+                    <span>03</span>
+                    <strong>Transform</strong>
+                    <small>TF-IDF features</small>
+                </div>
+
+                <div class="mini-arrow">→</div>
+
+                <div class="mini-flow-item">
+                    <span>04</span>
+                    <strong>Predict</strong>
+                    <small>Logistic Regression</small>
+                </div>
+
+                <div class="mini-arrow">→</div>
+
+                <div class="mini-flow-item final-output">
+                    <span>05</span>
+                    <strong>Output</strong>
+                    <small>Toxic / Non-Toxic</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
     </main>
 
 
