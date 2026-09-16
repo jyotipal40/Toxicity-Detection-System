@@ -109,7 +109,17 @@ This prevents information from the test set from influencing the learned TF-IDF 
 
 ## Dataset
 
-The project uses the **Jigsaw Toxic Comment Classification** dataset containing Wikipedia comments annotated across six toxicity-related labels:
+This project uses the **Jigsaw Toxic Comment Classification Challenge**
+dataset, which contains Wikipedia comments labeled for different types of
+toxic behavior.
+
+### Original Dataset
+
+The dataset is available through Kaggle:
+
+🔗 [Jigsaw Toxic Comment Classification Challenge](https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/data)
+
+The original dataset contains the following toxicity labels:
 
 - `toxic`
 - `severe_toxic`
@@ -117,6 +127,17 @@ The project uses the **Jigsaw Toxic Comment Classification** dataset containing 
 - `threat`
 - `insult`
 - `identity_hate`
+
+For this project, these six labels are combined into a single binary target:
+
+- `1` → Toxic
+- `0` → Non-Toxic
+
+The raw dataset is **not included in this repository**. It can be downloaded
+directly from the original Kaggle source using the link above.
+
+> **Note:** The dataset may contain profane, offensive, or otherwise
+> inappropriate text.
 
 ### Binary Target Construction
 
