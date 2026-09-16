@@ -2209,9 +2209,9 @@ body {
 }
 .arch-node {
     position: relative;
-    width: 135px;
-    min-height: 132px;
-    padding: 19px 14px;
+    width: 122px;
+    min-height: 138px;
+    padding: 18px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2224,10 +2224,10 @@ body {
 .arch-node:hover { transform: translateY(-7px); border-color: rgba(91,92,226,.5); box-shadow: 0 18px 40px rgba(91,92,226,.12); }
 .arch-node::before { content:""; position:absolute; inset:0; border-radius:inherit; background: linear-gradient(135deg,rgba(91,92,226,.06),transparent); pointer-events:none; }
 .arch-node span { font-size:10px; font-weight:800; color:var(--indigo); letter-spacing:1px; margin-bottom:10px; }
-.arch-node b { font-family:"Space Grotesk",sans-serif; font-size:15px; line-height:1.2; }
+.arch-node b { font-family:"Space Grotesk",sans-serif; font-size:14px; line-height:1.2; }
 .arch-node small { color:var(--muted); font-size:11px; line-height:1.4; margin-top:7px; }
 .arch-node i { font-style:normal; }
-.architecture-flow > i { color:#9aa4b5; font-size:20px; animation: flowPulse 1.8s ease-in-out infinite; }
+.architecture-flow > i { color:#9aa4b5; font-size:17px; animation: flowPulse 1.8s ease-in-out infinite; }
 .accent-node { border-color: rgba(34,166,179,.45); background: linear-gradient(145deg,#effcff,#fff); }
 .final-node { border-color: rgba(91,92,226,.45); background: linear-gradient(145deg,#f1f1ff,#fff); }
 @keyframes flowPulse { 0%,100%{opacity:.45; transform:translateX(0)} 50%{opacity:1; transform:translateX(3px)} }
@@ -2276,8 +2276,8 @@ body {
 
 /* Guidance */
 .guidance-section { background:#f5f7fb; }
-.guidance-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.guidance-card { position:relative; padding:30px; border:1px solid #dce2eb; border-radius:22px; background:#fff; overflow:hidden; transition:.3s ease; }
+.guidance-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; align-items:stretch; }
+.guidance-card { position:relative; min-height:235px; padding:30px; border:1px solid #dce2eb; border-radius:22px; background:#fff; overflow:hidden; transition:.3s ease; }
 .guidance-card::after { content:""; position:absolute; width:150px; height:150px; right:-80px; top:-80px; border-radius:50%; background:rgba(91,92,226,.08); }
 .guidance-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(23,32,51,.08); }
 .guidance-role { font-size:10px; font-weight:800; letter-spacing:1.4px; color:var(--indigo); }
@@ -2309,6 +2309,7 @@ footer { padding:45px 6%; background:#111827; color:#aeb8c9; border-top:0; text-
 
 /* Responsive */
 @media (max-width: 1050px) {
+    .guidance-grid { grid-template-columns:repeat(2,1fr); }
     .formula-grid { grid-template-columns:1fr 1fr; }
     .architecture-flow > i { display:none; }
     .arch-node { width:calc(25% - 12px); }
