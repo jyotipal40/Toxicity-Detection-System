@@ -37,7 +37,7 @@
                 <a href="#dataset">Dataset</a>
                 <a href="#pipeline">Pipeline</a>
                 <a href="#results">Results</a>
-                <a href="#technology">Tech Stack</a>
+                <a href="#tech-stack">Tech Stack</a>
             </nav>
 
             <a href="https://github.com/jyotipal40/Toxicity-Detection-System" class="github-button" target="_blank">
@@ -80,14 +80,15 @@
 
                 <div class="hero-buttons">
 
-                    <a href="https://youtu.be/hu2tvuUqd5k"
-                       class="primary-button"
-                       target="_blank"
-                       rel="noopener noreferrer">
+                    <a href="#project-video" class="primary-button">
                         ▶ &nbsp; Watch Project Video
                     </a>
 
-                    <a href="https://github.com/jyotipal40/Toxicity-Detection-System" class="secondary-button" target="_blank">
+                    <a href="https://app.notion.com/p/385cea32a8db8013bcdff33ee6cefa7f?source=copy_link" class="secondary-button notion-button" target="_blank" rel="noopener noreferrer">
+                        ◈ &nbsp; Documentation
+                    </a>
+
+                    <a href="https://github.com/jyotipal40/Toxicity-Detection-System" class="secondary-button" target="_blank" rel="noopener noreferrer">
                         ◉ &nbsp; View Source Code
                     </a>
 
@@ -114,6 +115,38 @@
 
             </div>
 
+        </section>
+
+
+        <!-- ================= PROJECT VIDEO ================= -->
+        <section class="showcase-section video-section" id="project-video">
+            <div class="showcase-container">
+                <div class="section-heading centered reveal">
+                    <span class="section-label">00 — PROJECT WALKTHROUGH</span>
+                    <h2>See the <span>System</span> in Action</h2>
+                    <p>
+                        The walkthrough is designed to show the actual notebook workflow —
+                        from the Jigsaw dataset and preprocessing to TF-IDF vectors, model
+                        comparison, evaluation and sample predictions.
+                    </p>
+                </div>
+
+                <div class="video-frame reveal">
+                    <div class="video-placeholder">
+                        <div class="video-placeholder-icon">▶</div>
+                        <h3>Project Video</h3>
+                        <p>Replace the placeholder YouTube ID below after uploading the final walkthrough.</p>
+                        <code>https://www.youtube.com/embed/YOUR_VIDEO_ID</code>
+                    </div>
+                    <!-- Replace YOUR_VIDEO_ID with the final YouTube video ID. -->
+                    <iframe
+                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                        title="Toxicity Detection System — Project Walkthrough"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
         </section>
 
 
@@ -310,6 +343,91 @@
 
             </div>
 
+        </section>
+
+
+        <!-- ================= SYSTEM ARCHITECTURE ================= -->
+        <section class="showcase-section architecture-section" id="architecture">
+            <div class="showcase-container">
+                <div class="section-heading reveal">
+                    <span class="section-label">03 — SYSTEM ARCHITECTURE</span>
+                    <h2>From <span>Text</span> to Prediction</h2>
+                    <p>
+                        Each stage transforms the data into a representation that the next
+                        stage can process, while keeping the test set isolated from TF-IDF fitting.
+                    </p>
+                </div>
+
+                <div class="architecture-flow reveal">
+                    <div class="arch-node"><span>01</span><b>Jigsaw Dataset</b><small>Wikipedia comments</small></div>
+                    <i>→</i>
+                    <div class="arch-node"><span>02</span><b>Six Labels</b><small>Toxicity categories</small></div>
+                    <i>→</i>
+                    <div class="arch-node"><span>03</span><b>Binary Target</b><small>0 / 1 classification</small></div>
+                    <i>→</i>
+                    <div class="arch-node"><span>04</span><b>Clean Text</b><small>Normalize & filter</small></div>
+                    <i>→</i>
+                    <div class="arch-node accent-node"><span>05</span><b>TF-IDF</b><small>10,000 features</small></div>
+                    <i>→</i>
+                    <div class="arch-node"><span>06</span><b>Model Comparison</b><small>4 classifiers</small></div>
+                    <i>→</i>
+                    <div class="arch-node final-node"><span>07</span><b>Prediction</b><small>TOXIC / NON-TOXIC</small></div>
+                </div>
+
+                <div class="architecture-note reveal">
+                    <span>DATA LEAKAGE CHECK</span>
+                    <strong>80/20 stratified split → TF-IDF fitted only on training text → test text transformed afterwards.</strong>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= MATHEMATICAL FOUNDATION ================= -->
+        <section class="math-section" id="foundation">
+            <div class="showcase-container">
+                <div class="section-heading centered reveal">
+                    <span class="section-label">04 — MATHEMATICAL FOUNDATION</span>
+                    <h2>The Ideas Behind the <span>Model</span></h2>
+                    <p>Core equations used to represent text and evaluate the classifier.</p>
+                </div>
+
+                <div class="formula-grid">
+                    <article class="formula-card reveal"><span>TF</span><h3>Term Frequency</h3><div class="formula">TF(t,d) = count(t,d) / total terms(d)</div><p>Measures how often a term appears in a document.</p></article>
+                    <article class="formula-card reveal"><span>IDF</span><h3>Inverse Document Frequency</h3><div class="formula">IDF(t) = log(N / df(t))</div><p>Down-weights terms that appear across many documents.</p></article>
+                    <article class="formula-card featured reveal"><span>TF-IDF</span><h3>Feature Weight</h3><div class="formula">TF-IDF(t,d) = TF(t,d) × IDF(t)</div><p>Turns cleaned comments into numerical feature vectors.</p></article>
+                    <article class="formula-card reveal"><span>F1</span><h3>Balanced Metric</h3><div class="formula">F1 = 2 × (Precision × Recall) / (Precision + Recall)</div><p>Balances precision and recall for model comparison.</p></article>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= CLASS IMBALANCE ================= -->
+        <section class="imbalance-section" id="imbalance">
+            <div class="showcase-container imbalance-layout">
+                <div class="imbalance-copy reveal">
+                    <span class="section-label">05 — EVALUATION CONTEXT</span>
+                    <h2>Why <span>Accuracy</span> Isn't Enough</h2>
+                    <p>
+                        Toxicity detection is evaluated on an imbalanced binary target. A high
+                        overall accuracy can hide missed toxic comments, so precision, recall and
+                        F1 are considered alongside accuracy.
+                    </p>
+                    <div class="metric-explainers">
+                        <div><b>Precision</b><span>How many predicted toxic comments were actually toxic.</span></div>
+                        <div><b>Recall</b><span>How many toxic comments the model successfully detected.</span></div>
+                        <div><b>F1 Score</b><span>Harmonic balance between precision and recall.</span></div>
+                    </div>
+                </div>
+                <div class="imbalance-visual reveal">
+                    <div class="imbalance-card">
+                        <span>MODEL SELECTION SIGNAL</span>
+                        <strong>71.49%</strong>
+                        <b>F1 Score</b>
+                        <small>Logistic Regression</small>
+                    </div>
+                    <div class="recall-card"><span>TOXIC CLASS</span><strong>86.23%</strong><small>Recall</small></div>
+                </div>
+            </div>
         </section>
 
         <!-- ==================== PIPELINE SECTION ==================== -->
@@ -1088,7 +1206,40 @@
     </section>
 
 
-    <!-- ==================== FUTURE WORK SECTION ==================== -->
+    <!-- ================= PROJECT GUIDANCE ================= -->
+    <section class="guidance-section" id="guidance">
+        <div class="showcase-container">
+            <div class="section-heading centered reveal">
+                <span class="section-label">PROJECT GUIDANCE</span>
+                <h2>Faculty Advisor & <span>Mentors</span></h2>
+                <p>Academic guidance and mentorship supporting the project work.</p>
+            </div>
+            <div class="guidance-grid">
+                <div class="guidance-card advisor-card reveal">
+                    <span class="guidance-role">FACULTY ADVISOR</span>
+                    <div class="guidance-avatar">PG</div>
+                    <h3>Prof. Prithwijit Guha</h3>
+                </div>
+                <div class="guidance-card reveal">
+                    <span class="guidance-role">MENTOR</span>
+                    <div class="guidance-avatar">MA</div>
+                    <h3>Mohd. Amaan</h3>
+                </div>
+                <div class="guidance-card reveal">
+                    <span class="guidance-role">MENTOR</span>
+                    <div class="guidance-avatar">SV</div>
+                    <h3>Shlok Verman</h3>
+                </div>
+            </div>
+            <div class="documentation-strip reveal">
+                <div><span>DOCUMENTATION</span><strong>Project notes & supporting material</strong></div>
+                <a href="https://app.notion.com/p/385cea32a8db8013bcdff33ee6cefa7f?source=copy_link" target="_blank" rel="noopener noreferrer">Open Notion →</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== FUTURE WORK SECTION ================= -->
     <section class="future-section" id="future">
 
         <div class="future-layout">
@@ -1174,16 +1325,54 @@
     <!-- ================= FOOTER ================= -->
 
     <footer>
-        <p>© 2026 Toxicity Detection System</p>
-
-        <a
-            href="https://github.com/jyotipal40/Toxicity-Detection-System"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            View Source on GitHub →
-        </a>
+        <div class="footer-inner">
+            <div>
+                <strong>Toxicity Detection System</strong>
+                <span>Machine Learning • NLP • Binary Toxicity Classification</span>
+            </div>
+            <div class="footer-links">
+                <a href="#project-video">Video</a>
+                <a href="https://app.notion.com/p/385cea32a8db8013bcdff33ee6cefa7f?source=copy_link" target="_blank" rel="noopener noreferrer">Notion</a>
+                <a href="https://github.com/jyotipal40/Toxicity-Detection-System" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+        <p class="footer-copy">© 2026 Toxicity Detection System</p>
     </footer>
+
+<script>
+(() => {
+    const items = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+        });
+    }, { threshold: 0.12 });
+    items.forEach(item => observer.observe(item));
+
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = [...navLinks].map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+    const navObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+            }
+        });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    sections.forEach(section => navObserver.observe(section));
+
+    document.querySelectorAll('.hero-stat strong').forEach(el => {
+        const target = parseFloat(el.textContent);
+        let current = 0;
+        const step = target / 55;
+        const tick = () => {
+            current += step;
+            if (current >= target) { el.textContent = target.toFixed(2) + '%'; return; }
+            el.textContent = current.toFixed(2) + '%'; requestAnimationFrame(tick);
+        };
+        setTimeout(tick, 450);
+    });
+})();
+</script>
 
 </body>
 
