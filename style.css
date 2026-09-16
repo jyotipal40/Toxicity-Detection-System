@@ -2338,3 +2338,36 @@ footer { padding:45px 6%; background:#111827; color:#aeb8c9; border-top:0; text-
     *,*::before,*::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
     .reveal { opacity:1; transform:none; }
 }
+
+
+/* FINAL COLOR + MOTION BOOST */
+:root{--violet:#8b5cf6;--pink:#ec4899;--cyan-bright:#06b6d4;--blue:#3b82f6;}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(circle at 12% 8%,rgba(139,92,246,.10),transparent 25%),radial-gradient(circle at 88% 22%,rgba(6,182,212,.09),transparent 25%),radial-gradient(circle at 48% 82%,rgba(236,72,153,.07),transparent 28%);}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.2;background-image:radial-gradient(rgba(91,92,226,.2) .7px,transparent .7px);background-size:24px 24px;mask-image:linear-gradient(to bottom,black,transparent 78%);}
+.navbar::after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--violet),var(--cyan-bright),var(--pink),transparent);background-size:300% 100%;animation:navFlow 7s linear infinite;}
+@keyframes navFlow{to{background-position:300% 0}}
+.logo-mark{box-shadow:0 0 0 1px rgba(255,255,255,.2),0 10px 25px rgba(91,92,226,.25);animation:logoFloat 4s ease-in-out infinite;}
+@keyframes logoFloat{50%{transform:translateY(-3px) rotate(2deg)}}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);animation:heroSweep 9s ease-in-out infinite;}
+@keyframes heroSweep{35%,100%{transform:translateX(120%)}}
+.hero-glow{animation:glowDrift 8s ease-in-out infinite alternate}.hero-glow-center{animation-delay:-2s}.hero-glow-right{animation-delay:-4s}
+@keyframes glowDrift{from{transform:translate3d(-15px,8px,0) scale(.95)}to{transform:translate3d(18px,-15px,0) scale(1.08)}}
+.hero h1{animation:titleIn .9s .08s both}.hero-description{animation:fadeUp .8s .22s both}.hero-buttons{animation:fadeUp .8s .34s both}.hero-stats{animation:fadeUp .8s .48s both}
+@keyframes titleIn{from{opacity:0;transform:translateY(22px);filter:blur(7px)}to{opacity:1;transform:none;filter:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-stat strong{background:linear-gradient(90deg,var(--indigo),var(--violet),var(--cyan-bright));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:metricGradient 5s linear infinite}
+@keyframes metricGradient{to{background-position:200% 0}}
+.section-heading h2 span{background:linear-gradient(90deg,var(--indigo),var(--violet),var(--cyan-bright),var(--pink));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:textGradient 6s linear infinite}
+@keyframes textGradient{to{background-position:250% 0}}
+.about-main-card,.about-side-card,.dataset-card,.pipeline-step,.pipeline-detail-card,.model-card,.prediction-card,.tech-group,.challenge-card,.guidance-card,.notebook-toolbar{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease}
+.about-main-card:hover,.about-side-card:hover,.dataset-card:hover,.pipeline-step:hover,.pipeline-detail-card:hover,.model-card:hover,.prediction-card:hover,.tech-group:hover,.challenge-card:hover,.guidance-card:hover,.notebook-toolbar:hover{transform:translateY(-8px);box-shadow:0 24px 65px rgba(23,32,51,.11),0 0 0 1px rgba(91,92,226,.07)}
+.pipeline-step:hover .step-icon{transform:translateY(-3px) scale(1.12) rotate(-3deg)}.step-icon{transition:transform .35s ease}
+.pipeline-arrow{animation:arrowPulse 1.8s ease-in-out infinite}@keyframes arrowPulse{50%{transform:translateX(5px);color:var(--indigo)}}
+.selected-badge{animation:selectedPulse 2.8s ease-in-out infinite}@keyframes selectedPulse{50%{box-shadow:0 0 0 6px rgba(91,92,226,.10)}}
+.matrix-cell{position:relative;overflow:hidden;transition:.3s ease}.matrix-cell:hover{transform:scale(1.025);z-index:2;box-shadow:0 15px 35px rgba(23,32,51,.12)}
+.prediction-card:hover .prediction-status{transform:translateX(3px);letter-spacing:1.2px}.prediction-status{transition:.3s ease}
+.tech-tag{position:relative;overflow:hidden}.tech-tag::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent,rgba(91,92,226,.08),transparent);transform:translateX(-120%)}.tech-tag:hover::after{animation:tagShine .7s ease}@keyframes tagShine{to{transform:translateX(120%)}}
+.guidance-card::after{animation:orbitGlow 6s ease-in-out infinite}@keyframes orbitGlow{50%{transform:translate(-25px,-20px) scale(1.15)}}
+@media(max-width:900px){.guidance-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.guidance-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
